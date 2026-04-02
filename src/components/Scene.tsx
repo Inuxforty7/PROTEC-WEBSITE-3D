@@ -12,6 +12,7 @@ export function Scene() {
           loop
           muted
           playsInline
+          preload="auto"
         />
         {/* Subtle gradient overlay just to ensure navbar readability at the top */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/50 via-transparent to-black/50 pointer-events-none" />
