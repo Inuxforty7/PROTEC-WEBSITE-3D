@@ -4,25 +4,47 @@
  */
 
 import { Scene } from './components/Scene';
+import { LoadingScreen } from './components/LoadingScreen';
 import { Phone, Users } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    
+    // Simulate initial load for "native app" feel
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
     <main className="relative w-full min-h-screen bg-black overflow-x-hidden touch-manipulation">
-      {/* Fixed Navbar Outside Canvas */}
-      <nav className="fixed top-0 left-0 w-full z-50 p-3 md:p-6 pointer-events-none">
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <LoadingScreen key="loader" />
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="will-change-[opacity]"
+          >
+            {/* Fixed Navbar Outside Canvas */}
+            <nav className="fixed top-0 left-0 w-full z-50 p-3 md:p-6 pointer-events-none">
         <motion.div 
           initial={false}
           animate={{
@@ -119,7 +141,10 @@ export default function App() {
         </motion.div>
       </nav>
 
-      <Scene />
+            <Scene />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

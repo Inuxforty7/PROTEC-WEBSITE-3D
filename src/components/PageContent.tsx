@@ -17,35 +17,49 @@ export function PageContent() {
   return (
     <div className="w-full pointer-events-none">
       {/* Page 1: Hero */}
-      <section ref={heroRef} className="min-h-screen flex flex-col justify-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pb-24 md:pb-32">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pb-24 md:pb-32">
+        {/* Subtle vignette for Hero text area */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent -z-10 pointer-events-none" />
+        
         <motion.div 
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl will-change-transform"
         >
-          <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6 font-display uppercase italic text-left">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20, skewX: -2 }}
+            animate={{ opacity: 1, y: 0, skewX: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-8 font-display uppercase italic text-left"
+          >
             Assistência de <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF7F] via-[#0055FF] to-[#00FF7F] bg-[length:200%_auto] animate-text-gradient">
               Computadores.
             </span>
-          </h1>
+          </motion.h1>
           
-          <div className="flex flex-col items-start mb-12">
-            <motion.p 
-              style={{ opacity: containerOpacity, x: containerX }}
-              className="text-xl md:text-3xl font-black bg-gradient-to-r from-[#00FF7F] via-[#0055FF] to-[#00FF7F] bg-[length:200%_auto] bg-clip-text text-transparent animate-text-gradient tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] mb-2 will-change-[transform,opacity]"
-            >
-              Especialistas em montagem, reparação e venda.
-            </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-start mb-12 relative"
+          >
+            {/* Subtle diffuse glow behind text for legibility without a box */}
+            <div className="absolute -inset-8 bg-black/20 blur-3xl rounded-full -z-10 pointer-events-none" />
             
-            <p className="text-lg md:text-2xl text-white font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] tracking-wide">
+            <p className="text-2xl md:text-4xl font-black bg-gradient-to-r from-[#00FF7F] via-[#0055FF] to-[#00FF7F] bg-[length:200%_auto] bg-clip-text text-transparent animate-text-gradient tracking-tight mb-3">
+              Especialistas em montagem, reparação e venda.
+            </p>
+            
+            <p className="text-lg md:text-2xl text-white font-bold tracking-wide">
               Consertando o presente, <span className="text-[#00FF7F]">garantindo o futuro.</span>
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          >
             <a 
               href="#localizacao" 
               className="group flex items-center justify-center gap-4 bg-[#00FF7F] text-gray-900 px-10 py-5 rounded-full font-black text-lg hover:bg-[#00e673] active:scale-95 transition-all hover:scale-105 shadow-2xl shadow-[#00FF7F]/30 will-change-transform"
@@ -53,7 +67,7 @@ export function PageContent() {
               <span>REPARAR AGORA</span>
               <Zap className="w-6 h-6 group-hover:animate-pulse" />
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 

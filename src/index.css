@@ -23,6 +23,7 @@ body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   background-color: black;
   color: white;
   user-select: none; /* Prevent text selection for a more native feel */
