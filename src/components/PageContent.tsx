@@ -88,36 +88,52 @@ export function PageContent() {
                 <Zap className="w-6 h-6 group-hover:fill-current transition-colors" />
               </motion.div>
             </motion.a>
-            
-            {/* Trust & Risk Reduction */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mt-2 sm:ml-2">
-              {/* Risk Reduction Badge */}
-              <div className="flex items-center gap-2 text-white/90 text-sm font-bold tracking-wide">
-                <span className="flex h-2.5 w-2.5 relative">
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Infinite Social Proof Marquee */}
+      <div className="w-full bg-black/40 backdrop-blur-md border-y border-white/5 py-4 overflow-hidden relative flex z-20 pointer-events-auto">
+        {/* Gradient masks for smooth fade on edges */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+        
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap items-center gap-8 md:gap-16 px-4 will-change-transform"
+        >
+          {/* Duplicate content to ensure seamless loop */}
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="flex items-center gap-8 md:gap-16">
+              <div className="flex items-center gap-2">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />)}
+                </div>
+                <span className="text-white font-bold text-sm md:text-base tracking-wide">5.0 no Google</span>
+              </div>
+              
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00FF7F]"></div>
+              
+              <span className="text-white/90 font-medium text-sm md:text-base tracking-wide">
+                <strong className="text-white">+1000</strong> reparações concluídas
+              </span>
+              
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00FF7F]"></div>
+              
+              <div className="flex items-center gap-2 text-white/90 text-sm md:text-base font-medium tracking-wide">
+                <span className="flex h-2 w-2 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FF7F] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00FF7F]"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FF7F]"></span>
                 </span>
                 Diagnóstico Rápido
               </div>
               
-              {/* Divider (hidden on mobile) */}
-              <div className="hidden sm:block w-1 h-1 rounded-full bg-white/30"></div>
-
-              {/* Social Proof */}
-              <div className="flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-white/80 text-sm font-medium">
-                  <strong className="text-white">+1000</strong> reparações
-                </span>
-              </div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00FF7F]"></div>
             </div>
-          </motion.div>
+          ))}
         </motion.div>
-      </section>
+      </div>
 
       {/* Page 2: Services */}
       <section className="min-h-screen flex flex-col justify-center items-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto py-16 md:py-32">
