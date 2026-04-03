@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import { Shield, Wrench, Battery, Monitor, Keyboard, Phone, MapPin, Cpu, HardDrive, Zap, Users } from 'lucide-react';
+import { Shield, Wrench, Battery, Monitor, Keyboard, Phone, MapPin, Cpu, HardDrive, Zap, Users, Star } from 'lucide-react';
 
 export function PageContent() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -54,13 +54,13 @@ export function PageContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+            className="flex flex-col items-start gap-4 w-full sm:w-auto"
           >
             <motion.a 
               href="#localizacao" 
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative flex items-center justify-center gap-4 bg-[#00FF7F] text-gray-900 px-10 py-5 rounded-full font-black text-lg overflow-hidden transition-shadow duration-500 shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:shadow-[0_0_40px_rgba(0,255,127,0.6)] will-change-transform"
+              className="group relative flex items-center justify-center gap-4 bg-[#00FF7F] text-gray-900 px-10 py-5 rounded-full font-black text-lg overflow-hidden transition-shadow duration-500 shadow-[0_0_20px_rgba(0,255,127,0.3)] hover:shadow-[0_0_40px_rgba(0,255,127,0.6)] will-change-transform w-full sm:w-auto"
             >
               {/* Premium Shimmer Effect */}
               <motion.div 
@@ -88,6 +88,33 @@ export function PageContent() {
                 <Zap className="w-6 h-6 group-hover:fill-current transition-colors" />
               </motion.div>
             </motion.a>
+            
+            {/* Trust & Risk Reduction */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mt-2 sm:ml-2">
+              {/* Risk Reduction Badge */}
+              <div className="flex items-center gap-2 text-white/90 text-sm font-bold tracking-wide">
+                <span className="flex h-2.5 w-2.5 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FF7F] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00FF7F]"></span>
+                </span>
+                Diagnóstico Rápido
+              </div>
+              
+              {/* Divider (hidden on mobile) */}
+              <div className="hidden sm:block w-1 h-1 rounded-full bg-white/30"></div>
+
+              {/* Social Proof */}
+              <div className="flex items-center gap-2">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-white/80 text-sm font-medium">
+                  <strong className="text-white">+1000</strong> reparações
+                </span>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </section>
@@ -197,10 +224,20 @@ export function PageContent() {
           
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 font-display uppercase italic">Venda & <span className="text-[#00FF7F]">Reparação.</span></h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 font-medium">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 font-medium">
               Especialistas em Laptops e Computadores.<br className="hidden md:block" />
               Mercado Anexo do Zimpeto (Em frente ao Parque).
             </p>
+            
+            <div className="flex justify-center mb-8">
+              <span className="bg-[#00FF7F]/10 text-[#00FF7F] border border-[#00FF7F]/20 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,127,0.15)]">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FF7F] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FF7F]"></span>
+                </span>
+                Diagnóstico Rápido
+              </span>
+            </div>
             
               <div className="flex flex-wrap justify-center gap-4">
                 <a 
