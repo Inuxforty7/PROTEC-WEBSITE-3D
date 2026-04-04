@@ -17,16 +17,16 @@ export function PageContent() {
   return (
     <div className="w-full pointer-events-none">
       {/* Page 1: Hero */}
-      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pb-24 md:pb-32">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pt-24 pb-24 md:pb-32">
         
         <motion.div 
-          className="max-w-4xl will-change-transform"
+          className="max-w-4xl will-change-transform mt-12"
         >
           <motion.h1 
             initial={{ opacity: 0, y: 20, skewX: -2 }}
             animate={{ opacity: 1, y: 0, skewX: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-8 font-display uppercase italic text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+            className="text-4xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-12 font-display uppercase italic text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
           >
             Assistência de <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF7F] via-[#0055FF] to-[#00FF7F] bg-[length:200%_auto] animate-text-gradient">
@@ -38,10 +38,10 @@ export function PageContent() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start mb-12 relative"
+            className="flex flex-col items-start mb-16 relative"
           >
             
-            <p className="text-xl md:text-4xl font-normal text-white tracking-tight mb-3 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <p className="text-xl md:text-4xl font-normal text-white tracking-tight mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Especialistas em montagem, reparação e venda.
             </p>
             
@@ -144,7 +144,7 @@ export function PageContent() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-md text-right bg-black/60 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl will-change-transform"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-4 font-display uppercase italic">O que<br/><span className="text-[#00FF7F]">fazemos.</span></h2>
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-8 font-display uppercase italic">O que<br/><span className="text-[#00FF7F]">fazemos.</span></h2>
           <p className="text-base md:text-lg text-gray-300 leading-relaxed font-medium">
             Diagnóstico preciso e soluções rápidas para hardware e software. Cuidamos da sua máquina com rigor.
           </p>
@@ -160,8 +160,8 @@ export function PageContent() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-md bg-black/60 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl will-change-transform"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-4 font-display uppercase italic">Performance<br/><span className="text-[#0055FF]">Máxima.</span></h2>
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 font-medium">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-8 font-display uppercase italic">Performance<br/><span className="text-[#0055FF]">Máxima.</span></h2>
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-12 font-medium">
             Upgrade de componentes e montagem personalizada para trabalho ou gaming de elite.
           </p>
           <div className="flex items-center gap-4 bg-black/40 backdrop-blur-xl p-4 rounded-2xl border border-white/10">
@@ -186,8 +186,8 @@ export function PageContent() {
             transition={{ duration: 0.6 }}
             className="bg-black/60 backdrop-blur-xl p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl will-change-transform"
           >
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-4 font-display uppercase italic">Peças &<br/><span className="text-[#00FF7F]">Acessórios.</span></h2>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-medium">
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-8 font-display uppercase italic">Peças &<br/><span className="text-[#00FF7F]">Acessórios.</span></h2>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-medium mb-4">
               Stock completo para todas as marcas e modelos.
             </p>
           </motion.div>
@@ -239,7 +239,7 @@ export function PageContent() {
           <div className="absolute top-0 right-0 w-[20rem] h-[20rem] bg-[#0055FF] rounded-full mix-blend-screen filter blur-[80px] opacity-20 translate-x-1/3 -translate-y-1/3" />
           
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 font-display uppercase italic">Venda & <span className="text-[#00FF7F]">Reparação.</span></h2>
+            <h2 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-10 font-display uppercase italic">Venda & <span className="text-[#00FF7F]">Reparação.</span></h2>
             <p className="text-lg md:text-xl text-gray-300 mb-8 font-medium">
               Especialistas em Laptops e Computadores.<br className="hidden md:block" />
               Mercado Anexo do Zimpeto (Em frente ao Parque).
