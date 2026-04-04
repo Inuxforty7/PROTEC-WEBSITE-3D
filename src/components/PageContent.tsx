@@ -26,7 +26,7 @@ export function PageContent() {
             initial={{ opacity: 0, y: 20, skewX: -2 }}
             animate={{ opacity: 1, y: 0, skewX: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-12 font-display uppercase italic text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+            className="text-4xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-6 font-display uppercase italic text-left drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
           >
             Assistência de <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF7F] via-[#0055FF] to-[#00FF7F] bg-[length:200%_auto] animate-text-gradient">
@@ -38,10 +38,10 @@ export function PageContent() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start mb-16 relative"
+            className="flex flex-col items-start mb-8 relative"
           >
             
-            <p className="text-xl md:text-4xl font-normal text-white tracking-tight mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <p className="text-xl md:text-4xl font-normal text-white tracking-tight mb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Especialistas em montagem, reparação e venda.
             </p>
             
