@@ -17,7 +17,7 @@ export function PageContent() {
   return (
     <div className="w-full pointer-events-none">
       {/* Page 1: Hero */}
-      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pb-24 md:pb-40">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-end px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto pb-12 md:pb-20">
         
         <motion.div 
           className="max-w-4xl will-change-transform"
