@@ -38,7 +38,7 @@ export function PageContent() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start mb-8 relative"
+            className="flex flex-col items-start mb-4 relative"
           >
             
             <p className="text-xl md:text-4xl font-normal text-white tracking-tight mb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
