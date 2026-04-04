@@ -228,21 +228,20 @@ export function PageContent() {
       </section>
 
       {/* Page 5: Contact */}
-      <section id="localizacao" className="min-h-screen flex flex-col justify-center px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto relative py-16 md:py-32">
+      <section id="localizacao" className="flex flex-col justify-center px-4 md:px-20 max-w-7xl mx-auto pointer-events-auto relative pt-24 pb-8 md:pt-32 md:pb-12">
         <motion.div 
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="bg-black/80 backdrop-blur-2xl rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-white overflow-hidden relative shadow-2xl border border-white/10 w-full will-change-transform"
+          className="bg-black/80 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 text-white overflow-hidden relative shadow-2xl border border-white/10 w-full will-change-transform mb-12"
         >
           <div className="absolute top-0 right-0 w-[20rem] h-[20rem] bg-[#0055FF] rounded-full mix-blend-screen filter blur-[80px] opacity-20 translate-x-1/3 -translate-y-1/3" />
           
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-10 font-display uppercase italic">Venda & <span className="text-[#00FF7F]">Reparação.</span></h2>
             <p className="text-lg md:text-xl text-gray-300 mb-8 font-medium">
-              Especialistas em Laptops e Computadores.<br className="hidden md:block" />
-              Mercado Anexo do Zimpeto (Em frente ao Parque).
+              Especialistas em montagem, reparação e venda de laptops e computadores
             </p>
             
             <div className="flex justify-center mb-8">
@@ -283,9 +282,10 @@ export function PageContent() {
           </div>
         </motion.div>
         
-        <footer className="absolute bottom-6 left-0 w-full text-center flex flex-col gap-1">
+        <footer className="w-full text-center flex flex-col gap-1">
           <span className="text-[#00FF7F] font-bold italic text-xs">"A sua satisfação é o nosso orgulho!"</span>
           <span className="text-[10px] text-gray-500 font-medium">© {new Date().getFullYear()} PROTEC COMPUTER.</span>
+          <span className="text-[10px] text-gray-500 font-medium mt-1">Desenvolvido por <span className="text-white font-bold">TchovaDigital</span></span>
         </footer>
       </section>
     </div>
